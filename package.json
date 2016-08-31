@@ -17,8 +17,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-export-extensions": "^6.8.0",
-    "co": "^4.6.0",
-    "node-fetch": "^1.6.0"
+    "co": "^4.6.0"
   },
   "repository": {
     "type": "git",
