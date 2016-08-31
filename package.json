@@ -1,0 +1,23 @@
+{
+  "name": "@gzzhanghao/mocker-actions",
+  "version": "0.1.0",
+  "description": "A set of mocker actions",
+  "main": "lib",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel src -d lib",
+    "watch": "babel src -d lib --watch"
+  },
+  "author": "Jason <jason.daurus@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-async-to-module-method": "^6.8.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0"
+  },
+  "dependencies": {
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "co": "^4.6.0",
+    "node-fetch": "^1.6.0"
+  }
+}
