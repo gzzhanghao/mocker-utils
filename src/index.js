@@ -1,4 +1,4 @@
-export { action, waitFor } from './utils'
+export { action } from './utils'
 
 export set from './actions/set'
 export file from './actions/file'

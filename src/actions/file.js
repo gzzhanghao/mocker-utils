@@ -1,6 +1,7 @@
 import fs from 'fs'
 import mime from 'mime-types'
-import { action, waitFor } from '../utils'
+import waitFor from 'event-to-promise'
+import { action } from '../utils'
 
 export default action(path => async (req, res) => {
   const stream = fs.createReadStream(path)

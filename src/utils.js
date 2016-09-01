@@ -6,12 +6,3 @@ export function action(handler) {
     return handler(...args)(req, res)
   }
 }
-
-export function waitFor(emitter, event, listenError) {
-  return new Promise((resolve, reject) => {
-    emitter.once(event, resolve)
-    if (listenError) {
-      emitter.once('error', reject)
-    }
-  })
-}
