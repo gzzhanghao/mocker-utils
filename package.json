@@ -20,7 +20,8 @@
   "dependencies": {
     "babel-plugin-transform-export-extensions": "^6.8.0",
     "co": "^4.6.0",
-    "lodash.merge": "^4.6.0"
+    "lodash.merge": "^4.6.0",
+    "mime-types": "^2.1.11"
   },
   "repository": {
     "type": "git",

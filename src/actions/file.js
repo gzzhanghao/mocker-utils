@@ -1,4 +1,5 @@
 import fs from 'fs'
+import mime from 'mime-types'
 import { action, waitFor } from '../utils'
 
 export default action(path => async (req, res) => {
@@ -10,8 +11,9 @@ export default action(path => async (req, res) => {
     return
   }
 
-  res.writeHead({
-    // @todo Content-Type
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': mime.lookup(path) || 'application/octet-stream',
   })
 
   stream.pipe(res)
