@@ -1,6 +1,5 @@
 import fs from 'fs'
-import http from 'http'
-import https from 'https'
+import { action } from '../utils'
 
 export default action(path => async (req, res) => {
   const remoteRes = await req.send()
@@ -16,6 +15,5 @@ export default action(path => async (req, res) => {
   remoteRes.pipe(res)
 
   await waitFor(remoteRes, 'end', true)
-
   return false
 })
