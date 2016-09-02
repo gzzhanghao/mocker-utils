@@ -1,6 +1,6 @@
 import fs from 'fs'
 import waitFor from 'event-to-promise'
-import { action } from '../utils'
+import action from './base'
 
 export default action(path => async (req, res) => {
   const remoteRes = await req.send()

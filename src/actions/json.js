@@ -1,4 +1,4 @@
-import { action } from '../utils'
+import action from './base'
 
 export default action(json => (req, res) => {
   res.writeHead(200, {

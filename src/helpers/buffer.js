@@ -1,4 +1,4 @@
-import { waitFor } from '../utils'
+import waitFor from 'event-to-promise'
 
 export default async function(res) {
   const buffers = []

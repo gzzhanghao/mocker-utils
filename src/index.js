@@ -1,7 +1,8 @@
-export { action } from './utils'
+export action from './actions/base'
 
 export set from './actions/set'
 export file from './actions/file'
+export pass from './actions/pass'
 export save from './actions/save'
 export host from './actions/host'
 export json from './actions/json'
