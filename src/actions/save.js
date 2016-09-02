@@ -1,6 +1,6 @@
 import fs from 'fs'
 import waitFor from 'event-to-promise'
-import action from './base'
+import action from '../base'
 
 export default action(path => async (req, res) => {
   const remoteRes = await req.send()
@@ -12,9 +12,9 @@ export default action(path => async (req, res) => {
 
   remoteRes.pipe(stream)
 
-  res.writeHead(remoteRes.statusCode, remoteRes.headers)
-  remoteRes.pipe(res)
+  res.statusCode = remoteRes.statusCode
+  res.headers = remoteRes.headers
+  res.body = remoteRes
 
-  await waitFor(remoteRes, 'end', true)
   return false
 })

@@ -1,7 +1,6 @@
 import fs from 'fs'
 import mime from 'mime-types'
-import waitFor from 'event-to-promise'
-import action from './base'
+import action from '../base'
 
 export default action(path => async (req, res) => {
   const stream = fs.createReadStream(path)
@@ -12,12 +11,8 @@ export default action(path => async (req, res) => {
     return
   }
 
-  res.writeHead(200, {
-    'Content-Type': mime.lookup(path) || 'application/octet-stream',
-  })
+  res.headers['Content-Type'] = mime.lookup(path) || 'application/octet-stream'
+  res.body = stream
 
-  stream.pipe(res)
-
-  await waitFor(stream, 'end', true)
   return false
 })
