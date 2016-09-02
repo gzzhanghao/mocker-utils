@@ -13,7 +13,6 @@ export default action(path => async (req, res) => {
   }
 
   res.writeHead(200, {
-    'Access-Control-Allow-Origin': '*',
     'Content-Type': mime.lookup(path) || 'application/octet-stream',
   })
 
