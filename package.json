@@ -22,7 +22,8 @@
     "co": "^4.6.0",
     "event-to-promise": "^0.7.0",
     "lodash.merge": "^4.6.0",
-    "mime-types": "^2.1.11"
+    "mime-types": "^2.1.11",
+    "promisify": "0.0.3"
   },
   "repository": {
     "type": "git",

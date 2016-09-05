@@ -13,3 +13,5 @@ export merge from './helpers/merge'
 export toBuffer from './handlers/buffer'
 export toText from './handlers/text'
 export toJSON from './handlers/json'
+
+export { readFile, writeFile } from './utils/files'
