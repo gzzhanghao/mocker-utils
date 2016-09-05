@@ -1,5 +1,6 @@
 import fs from 'fs'
 import mime from 'mime-types'
+import waitFor from 'event-to-promise'
 import action from '../base'
 
 export default action(path => async (req, res) => {
