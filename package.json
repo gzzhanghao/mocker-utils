@@ -1,7 +1,7 @@
 {
-  "name": "@gzzhanghao/mocker-actions",
+  "name": "@gzzhanghao/mocker-utils",
   "version": "0.1.0",
-  "description": "A set of mocker actions",
+  "description": "A set of mocker utils",
   "main": "lib",
   "scripts": {
     "prepublish": "npm run build",
@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gzzhanghao/mocker-actions.git"
+    "url": "git+https://github.com/gzzhanghao/mocker-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/gzzhanghao/mocker-actions/issues"
+    "url": "https://github.com/gzzhanghao/mocker-utils/issues"
   },
-  "homepage": "https://github.com/gzzhanghao/mocker-actions#readme"
+  "homepage": "https://github.com/gzzhanghao/mocker-utils#readme"
 }
