@@ -7,6 +7,7 @@ export json from './actions/json'
 
 export set from './helpers/set'
 export host from './helpers/host'
+export wait from './helpers/wait'
 export merge from './helpers/merge'
 
 export toBuffer from './handlers/buffer'
