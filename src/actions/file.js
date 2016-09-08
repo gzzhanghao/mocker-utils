@@ -12,7 +12,9 @@ export default action(path => async (req, res) => {
     return
   }
 
-  res.headers['Content-Type'] = mime.lookup(path) || 'application/octet-stream'
+  if (!res.headers['content-type']) {
+    res.headers['content-type'] = mime.lookup(path) || 'application/octet-stream'
+  }
   res.body = stream
 
   return false
