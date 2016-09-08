@@ -1,5 +1,8 @@
 import fs from 'fs'
 import waitFor from 'event-to-promise'
+import { decode } from '@gzzhanghao/mocker-utils'
+import { PassThrough } from 'stream'
+
 import action from '../base'
 
 export default action(path => async (req, res) => {
@@ -10,11 +13,14 @@ export default action(path => async (req, res) => {
 
   await waitFor(stream, 'open', true)
 
-  remoteRes.pipe(stream)
+  const body = remoteRes.pipe(new PassThrough)
+  const raw = await decode(remoteRes)
+
+  raw.pipe(stream)
 
   res.statusCode = remoteRes.statusCode
   res.headers = remoteRes.headers
-  res.body = remoteRes
+  res.body = body
 
   return false
 })
