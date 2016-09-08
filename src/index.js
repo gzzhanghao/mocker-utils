@@ -14,10 +14,10 @@ export merge from './helpers/merge'
 export query from './helpers/query'
 export headers from './helpers/headers'
 
+export decode from './handlers/decode'
 export toBuffer from './handlers/buffer'
 export toText from './handlers/text'
 export toJSON from './handlers/json'
 
 export res from './utils/res'
-export decode from './utils/decode'
 export { readFile, writeFile } from './utils/file'

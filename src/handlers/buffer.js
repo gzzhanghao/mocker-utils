@@ -1,5 +1,5 @@
 import waitFor from 'event-to-promise'
-import decode from '../utils/decode'
+import decode from './decode'
 
 export default async function(res) {
   const buffers = []
