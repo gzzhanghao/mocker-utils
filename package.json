@@ -1,6 +1,6 @@
 {
   "name": "@gzzhanghao/mocker-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of mocker utils",
   "main": "lib",
   "scripts": {
@@ -15,10 +15,11 @@
     "babel-plugin-transform-async-to-module-method": "^6.8.0",
     "babel-plugin-transform-es2015-destructuring": "^6.9.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
-    "babel-plugin-transform-es2015-parameters": "^6.11.4"
+    "babel-plugin-transform-es2015-parameters": "^6.11.4",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-plugin-transform-es2015-spread": "^6.8.0"
   },
   "dependencies": {
-    "babel-plugin-transform-export-extensions": "^6.8.0",
     "co": "^4.6.0",
     "event-to-promise": "^0.7.0",
     "lodash.merge": "^4.6.0",
