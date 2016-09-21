@@ -4,8 +4,9 @@ export default async (req, res) => {
   const remoteRes = await req.send()
 
   res.statusCode = remoteRes.statusCode
-  res.headers = remoteRes.headers
   res.body = remoteRes
+
+  Object.assign(res.headers, remoteRes.headers)
 
   return false
 }

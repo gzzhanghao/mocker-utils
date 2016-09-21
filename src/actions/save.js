@@ -19,8 +19,9 @@ export default action(path => async (req, res) => {
   raw.pipe(stream)
 
   res.statusCode = remoteRes.statusCode
-  res.headers = remoteRes.headers
   res.body = body
+
+  Object.assign(res.headers, remoteRes.headers)
 
   return false
 })
