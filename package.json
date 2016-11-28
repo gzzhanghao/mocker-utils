@@ -1,6 +1,6 @@
 {
   "name": "@gzzhanghao/mocker-utils",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A set of mocker utils",
   "main": "lib",
   "scripts": {
@@ -21,10 +21,10 @@
   },
   "dependencies": {
     "co": "^4.6.0",
+    "es6-promisify": "^5.0.0",
     "event-to-promise": "^0.7.0",
     "lodash.merge": "^4.6.0",
-    "mime-types": "^2.1.11",
-    "promisify": "0.0.3"
+    "mime-types": "^2.1.11"
   },
   "repository": {
     "type": "git",

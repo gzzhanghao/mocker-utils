@@ -11,7 +11,7 @@ export default action(path => async (req, res) => {
 
   remoteRes.pause()
 
-  await waitFor(stream, 'open', true)
+  await waitFor(stream, 'open')
 
   const body = remoteRes.pipe(new PassThrough)
   const raw = await decode(remoteRes)
