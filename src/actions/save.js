@@ -1,11 +1,10 @@
 import fs from 'fs'
 import waitFor from 'event-to-promise'
-import { decode } from '@gzzhanghao/mocker-utils'
 import { PassThrough } from 'stream'
 
-import action from '../base'
+import decode from './handlers/decode'
 
-export default action(path => async (req, res) => {
+export default path => async req => {
   const remoteRes = await req.send()
   const stream = fs.createWriteStream(path)
 
@@ -18,10 +17,9 @@ export default action(path => async (req, res) => {
 
   raw.pipe(stream)
 
-  res.statusCode = remoteRes.statusCode
-  res.body = body
-
-  Object.assign(res.headers, remoteRes.headers)
-
-  return false
-})
+  return {
+    body,
+    statusCode: remoteRes.statusCode,
+    headers: remoteRes.headers,
+  }
+}
