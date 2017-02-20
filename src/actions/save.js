@@ -2,7 +2,7 @@ import fs from 'fs'
 import waitFor from 'event-to-promise'
 import { PassThrough } from 'stream'
 
-import decode from './handlers/decode'
+import decode from '../handlers/decode'
 
 export default path => async req => {
   const remoteRes = await req.send()
