@@ -7,9 +7,10 @@ export default path => async req => {
   const res = await req.send()
   const file = fs.createWriteStream(path)
 
-  await waitFor(file, 'open')
-
-  const body = await res.stream()
+  const [body] = await Promise.all([
+    res.stream(),
+    waitFor(file, 'open'),
+  ])
 
   await waitFor(body.pipe(file), 'close')
 }

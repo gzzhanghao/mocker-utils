@@ -1,13 +1,8 @@
 {
+  presets: [
+    ['env', { targets: { node: 'current' } }],
+  ],
   plugins: [
-    'transform-es2015-modules-commonjs',
-    'transform-es2015-spread',
-    'transform-export-extensions',
-    'transform-es2015-parameters',
-    'transform-es2015-destructuring',
-    ['transform-async-to-module-method', {
-      module: 'co',
-      method: 'wrap'
-    }]
-  ]
+    'babel-plugin-transform-export-extensions',
+  ],
 }
