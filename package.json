@@ -1,7 +1,7 @@
 {
   "name": "@gzzhanghao/mocker-utils",
   "version": "1.2.0",
-  "description": "A set of mocker utils",
+  "description": "A set of util functions for mocker",
   "main": "lib",
   "scripts": {
     "prepublish": "npm run build",
@@ -16,8 +16,6 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.5",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-export-namespace": "^7.0.0-beta.32",
     "@babel/preset-env": "^7.1.5",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.9.0"
