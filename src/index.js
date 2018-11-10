@@ -29,12 +29,12 @@ export const file = path => async () => {
  */
 export const save = path => async req => {
   const res = await req.send()
+
+  const body = res.stream({ consume: false })
   const file = fs.createWriteStream(path)
-  const [body] = await Promise.all([
-    res.stream(),
-    waitFor(file, 'open'),
-  ])
-  await waitFor(body.pipe(file), 'close')
+
+  await waitFor(file, 'open')
+  await waitFor(body.pipe(file), 'end')
 }
 
 /**
