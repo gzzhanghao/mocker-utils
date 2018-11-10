@@ -1,8 +1,9 @@
 {
   presets: [
-    ['env', { targets: { node: 'current' } }],
+    ['@babel/preset-env', { targets: { node: '8' } }],
   ],
   plugins: [
-    'babel-plugin-transform-export-extensions',
+    '@babel/plugin-proposal-export-namespace',
+    '@babel/plugin-proposal-export-default-from',
   ],
 }
