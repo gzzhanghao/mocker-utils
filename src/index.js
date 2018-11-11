@@ -1,6 +1,18 @@
 import fs from 'fs'
 import mime from 'mime-types'
 import waitFor from 'event-to-promise'
+import { Server } from 'ws'
+
+const wss = new Server({ noServer: true })
+
+/**
+ * Creates a WebSocket connection with UpgradeRequest
+ *
+ * @param {mocker.UpgradeRequest} req
+ */
+export const ws = req => new Promise(resolve => {
+  wss.handleUpgrade(...req.accept(), resolve)
+})
 
 /**
  * Respond with local file

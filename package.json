@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "babel src -d lib",
-    "watch": "babel src -d lib --watch"
+    "dev": "babel src -d lib --watch"
   },
   "files": [
     "lib"
@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "event-to-promise": "^0.8.0",
-    "mime-types": "^2.1.21"
+    "mime-types": "^2.1.21",
+    "ws": "^6.1.0"
   },
   "repository": {
     "type": "git",

@@ -2,8 +2,4 @@
   presets: [
     ['@babel/preset-env', { targets: { node: '8' } }],
   ],
-  plugins: [
-    '@babel/plugin-proposal-export-namespace',
-    '@babel/plugin-proposal-export-default-from',
-  ],
 }
