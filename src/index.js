@@ -15,6 +15,28 @@ export const ws = req => new Promise(resolve => {
 })
 
 /**
+ * Add headers for response
+ *
+ * @param {mocker.Request} headers
+ */
+export const headers = headers => req => {
+  req.transformResponse = res => {
+    Object.assign(res.headers, headers)
+  }
+}
+
+/**
+ * Add CORS headers for response
+ */
+export const cors = () => req => headers({
+  'access-control-allow-origin': req.headers['origin'],
+  'access-control-allow-methods': req.headers['access-control-request-method'],
+  'access-control-allow-headers': req.headers['access-control-request-headers'],
+  'access-control-allow-credentials': 'true',
+  'access-control-max-age': '86400',
+})
+
+/**
  * Respond with local file
  *
  * @param {string} path
@@ -40,7 +62,7 @@ export const file = path => async () => {
  * @param {string} path
  */
 export const save = path => async req => {
-  const res = await req.send()
+  const res = await req.send({ consume: false })
 
   const body = res.stream({ consume: false })
   const file = fs.createWriteStream(path)
