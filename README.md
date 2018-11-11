@@ -11,7 +11,7 @@ npm i -S @gzzhagnaho/mocker-utils
 Then import the package in your mocker rules:
 
 ```javascript
-import { file, save, html, json } from '@gzzhangaho/mocker-utils'
+import { file, save, html, json, ws } from '@gzzhangaho/mocker-utils'
 
 export default [
 
@@ -34,5 +34,13 @@ export default [
   '//mocker.io/awesome-api', [
     req => json({ username: req.query.name }),
   ],
+
+  // Hijacking WebSocket connection
+  'ws://echo.websocket.org', async req => {
+    const socket = await ws(req)
+    socket.on('message', msg => {
+      socket.send(`[MOCKER]: ${msg}`)
+    })
+  },
 ]
 ```
