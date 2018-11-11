@@ -35,11 +35,11 @@ export default [
     req => json({ username: req.query.name }),
   ],
 
-  // Hijacking WebSocket connection
+  // Hijacking WebSocket connection. http://www.websocket.org/echo.html
   'ws://echo.websocket.org', async req => {
     const socket = await ws(req)
     socket.on('message', msg => {
-      socket.send(`[MOCKER]: ${msg}`)
+      socket.send(`[MOCKER] ${msg}`)
     })
   },
 ]
