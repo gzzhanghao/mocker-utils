@@ -20,9 +20,9 @@ export const ws = req => new Promise(resolve => {
  * @param {mocker.Request} headers
  */
 export const headers = headers => req => {
-  req.transformResponse = res => {
+  req.transformResponse.push(res => {
     Object.assign(res.headers, headers)
-  }
+  })
 }
 
 /**
