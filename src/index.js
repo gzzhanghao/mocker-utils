@@ -28,13 +28,22 @@ export const headers = headers => req => {
 /**
  * Add CORS headers for response
  */
-export const cors = () => req => headers({
-  'access-control-allow-origin': req.headers['origin'],
-  'access-control-allow-methods': req.headers['access-control-request-method'],
-  'access-control-allow-headers': req.headers['access-control-request-headers'],
-  'access-control-allow-credentials': 'true',
-  'access-control-max-age': '86400',
-})
+export const cors = () => req => {
+  const resHeaders = {
+    'access-control-allow-credentials': 'true',
+    'access-control-max-age': '86400',
+  }
+  if (req.headers['origin']) {
+    resHeaders['access-control-allow-origin'] = req.headers['origin']
+  }
+  if (req.headers['access-control-request-method']) {
+    resHeaders['access-control-allow-methods'] = req.headers['access-control-request-method']
+  }
+  if (req.headers['access-control-request-headers']) {
+    resHeaders['access-control-allow-headers'] = req.headers['access-control-request-headers']
+  }
+  return headers(resHeaders)
+}
 
 /**
  * Respond with local file
