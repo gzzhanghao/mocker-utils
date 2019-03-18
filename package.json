@@ -1,6 +1,6 @@
 {
   "name": "@gzzhanghao/mocker-utils",
-  "version": "3.0.0-beta.4",
+  "version": "3.0.0",
   "description": "A set of util functions for mocker",
   "main": "lib",
   "scripts": {
@@ -14,16 +14,16 @@
   "author": "Jason <jason.daurus@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.9.0"
+    "eslint": "^5.15.2"
   },
   "dependencies": {
     "event-to-promise": "^0.8.0",
-    "mime-types": "^2.1.21",
-    "ws": "^6.1.0"
+    "mime-types": "^2.1.22",
+    "ws": "^6.2.0"
   },
   "repository": {
     "type": "git",
